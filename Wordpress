@@ -1,0 +1,11 @@
+Add this line and the corresponding file to Base theme functions.php to call child theme php file.
+WARNING - If the corresponding child theme php is missing it will possibly crash site.
+
+/* Child theme options */
+
+     add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+     function my_theme_enqueue_styles() { 
+          wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' ); 
+          } 
+	 require_once( get_stylesheet_directory() . '/functions/ddbs-fn-child.php' );            
+
